@@ -1,0 +1,48 @@
+var moonWalkers = [
+  "Neil Armstrong",
+  "Buzz Aldrin",
+  "Pete Conrad",
+  "Alan Bean",
+  "Alan Shepard",
+  "Edgar Mitchell",
+  "David Scott",
+  "James Irwin",
+  "John Young",
+  "Charles Duke",
+  "Eugene Cernan",
+  "Harrison Schmitt"
+];
+
+//function to alphabetize names in an array
+function alphabetizer(names) 
+{
+ var alphatemp = [];
+    
+    alphatemp = lastfirst(names);   
+    alphatemp.sort();
+    
+    return alphatemp;
+}
+
+
+//function to change a array of names from first & last name to last name then first name
+function lastfirst(names)
+{
+ var i=0;
+ var temp = [];
+ var lftemp = [];
+    
+    for (i = 0; i < names.length; i++) 
+    {
+         temp[0] = names[i].split(" ")[0];
+         temp[1] = names[i].split(" ")[1];
+        lftemp[i] = temp[1] + ", " + temp[0];
+    }
+
+    return lftemp;
+    
+}
+
+// Try logging your results to test your code!
+
+console.log(alphabetizer(moonWalkers));
